@@ -1,0 +1,993 @@
+/* ==========================================================
+   Tacos 420
+   Diseño Premium
+   Colores: Negro + Verde Neón
+========================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#050505;
+
+    color:#ffffff;
+
+    overflow-x:hidden;
+
+}
+
+/*===============================
+SCROLL
+================================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#0d0d0d;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#13d651;
+
+    border-radius:50px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#27ff70;
+
+}
+
+/*===============================
+NAVBAR
+================================*/
+
+header{
+
+    width:100%;
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    z-index:1000;
+
+    transition:.4s;
+
+}
+
+header.scrolled{
+
+    background:rgba(0,0,0,.85);
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:0 0 20px rgba(0,255,100,.25);
+
+}
+
+.navbar{
+
+    max-width:1400px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 40px;
+
+}
+
+.logo-nav img{
+
+    width:85px;
+
+    transition:.4s;
+
+}
+
+.logo-nav img:hover{
+
+    transform:scale(1.08);
+
+}
+
+.nav-links{
+
+    display:flex;
+
+    gap:40px;
+
+    list-style:none;
+
+}
+
+.nav-links a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:16px;
+
+    font-weight:500;
+
+    position:relative;
+
+    transition:.35s;
+
+}
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:0;
+
+    height:2px;
+
+    left:0;
+
+    bottom:-7px;
+
+    background:#18ff67;
+
+    transition:.35s;
+
+}
+
+.nav-links a:hover{
+
+    color:#18ff67;
+
+}
+
+.nav-links a:hover::after{
+
+    width:100%;
+
+}
+
+.menu-btn{
+
+    display:none;
+
+    color:white;
+
+    font-size:28px;
+
+    cursor:pointer;
+
+}
+
+/*===============================
+HERO
+================================*/
+
+.hero{
+
+    position:relative;
+
+    width:100%;
+
+    height:100vh;
+
+    overflow:hidden;
+
+}
+
+.hero img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    animation:zoomHero 12s infinite alternate;
+
+}
+
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        rgba(0,0,0,.45),
+        rgba(0,0,0,.65)
+    );
+
+    z-index:1;
+
+}
+
+.scroll-down{
+
+    position:absolute;
+
+    bottom:40px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    color:white;
+
+    font-size:35px;
+
+    z-index:5;
+
+    animation:float 2s infinite;
+
+}
+
+@keyframes float{
+
+    0%{
+
+        transform:translate(-50%,0);
+
+    }
+
+    50%{
+
+        transform:translate(-50%,12px);
+
+    }
+
+    100%{
+
+        transform:translate(-50%,0);
+
+    }
+
+}
+
+@keyframes zoomHero{
+
+    from{
+
+        transform:scale(1);
+
+    }
+
+    to{
+
+        transform:scale(1.08);
+
+    }
+
+}
+/*==================================================
+LOGO SECTION
+==================================================*/
+
+.logo-section{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+    radial-gradient(circle at top,#0d3d1e 0%,#050505 60%);
+
+    padding:80px 20px;
+
+}
+
+.logo-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.logo-container img{
+
+    width:420px;
+
+    max-width:90%;
+
+    filter:drop-shadow(0 0 25px rgba(18,255,106,.45));
+
+    transition:.5s;
+
+}
+
+.logo-container img:hover{
+
+    transform:scale(1.05);
+
+    filter:drop-shadow(0 0 45px #19ff72);
+
+}
+
+
+/*==================================================
+SECCIONES
+==================================================*/
+
+.menu,
+.sucursales,
+.redes,
+.contacto{
+
+    padding:120px 8%;
+
+}
+
+.titulo{
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+}
+
+.titulo h2{
+
+    font-size:45px;
+
+    color:#19ff72;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+}
+
+.linea{
+
+    width:120px;
+
+    height:4px;
+
+    background:#19ff72;
+
+    margin:20px auto;
+
+    border-radius:30px;
+
+    box-shadow:0 0 20px #19ff72;
+
+}
+
+
+/*==================================================
+MENU
+==================================================*/
+
+.menu{
+
+    background:#080808;
+
+}
+
+.menu-img{
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.menu-img img{
+
+    width:100%;
+
+    max-width:1100px;
+
+    border-radius:20px;
+
+    transition:.45s;
+
+    border:2px solid #19ff72;
+
+    box-shadow:0 0 30px rgba(25,255,114,.20);
+
+}
+
+.menu-img img:hover{
+
+    transform:scale(1.02);
+
+    box-shadow:0 0 45px rgba(25,255,114,.55);
+
+}
+
+
+/*==================================================
+SUCURSALES
+==================================================*/
+
+.sucursales{
+
+    background:#050505;
+
+}
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:35px;
+
+}
+
+.card{
+
+    background:#0d0d0d;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    border:1px solid rgba(25,255,114,.18);
+
+    transition:.45s;
+
+    box-shadow:0 0 18px rgba(0,0,0,.35);
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 0 35px rgba(25,255,114,.35);
+
+}
+
+.card img{
+
+    width:100%;
+
+    height:250px;
+
+    object-fit:cover;
+
+    transition:.45s;
+
+}
+
+.card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.card-content{
+
+    padding:30px;
+
+}
+
+.card-content h3{
+
+    font-size:26px;
+
+    color:#19ff72;
+
+    margin-bottom:15px;
+
+}
+
+.card-content p{
+
+    color:#d8d8d8;
+
+    line-height:1.8;
+
+    margin-bottom:30px;
+
+}
+
+
+/*==================================================
+BOTONES
+==================================================*/
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:14px 28px;
+
+    background:#19ff72;
+
+    color:black;
+
+    text-decoration:none;
+
+    border-radius:40px;
+
+    font-weight:700;
+
+    transition:.35s;
+
+}
+
+.btn:hover{
+
+    background:white;
+
+    transform:translateY(-4px);
+
+    box-shadow:0 0 25px #19ff72;
+
+}
+/*==================================================
+REDES SOCIALES
+==================================================*/
+
+.redes{
+
+    background:#080808;
+
+}
+
+.redes-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+
+}
+
+.social{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    text-decoration:none;
+
+    color:white;
+
+    background:#111;
+
+    padding:18px 35px;
+
+    border-radius:60px;
+
+    font-size:20px;
+
+    font-weight:600;
+
+    border:2px solid transparent;
+
+    transition:.35s;
+
+}
+
+.social i{
+
+    font-size:28px;
+
+}
+
+.social:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#19ff72;
+
+    box-shadow:0 0 30px rgba(25,255,114,.35);
+
+}
+
+.facebook:hover{
+
+    color:#1877F2;
+
+}
+
+.instagram:hover{
+
+    color:#ff4fd8;
+
+}
+
+
+/*==================================================
+CONTACTO
+==================================================*/
+
+.contacto{
+
+    background:#050505;
+
+    text-align:center;
+
+}
+
+.contacto-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+.contacto-info i{
+
+    font-size:55px;
+
+    color:#19ff72;
+
+}
+
+.contacto-info h3{
+
+    font-size:34px;
+
+    letter-spacing:2px;
+
+}
+
+
+/*==================================================
+WHATSAPP
+==================================================*/
+
+.whatsapp{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:65px;
+
+    height:65px;
+
+    background:#25D366;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    font-size:35px;
+
+    text-decoration:none;
+
+    z-index:999;
+
+    animation:pulse 2s infinite;
+
+    box-shadow:0 0 20px rgba(37,211,102,.5);
+
+}
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.12);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+/*==================================================
+FOOTER
+==================================================*/
+
+footer{
+
+    background:black;
+
+    padding:60px 20px;
+
+    text-align:center;
+
+    border-top:1px solid rgba(25,255,114,.2);
+
+}
+
+.footer-logo img{
+
+    width:120px;
+
+    margin-bottom:20px;
+
+    filter:drop-shadow(0 0 20px rgba(25,255,114,.4));
+
+}
+
+footer p{
+
+    color:#bdbdbd;
+
+    font-size:15px;
+
+}
+
+
+/*==================================================
+ANIMACIONES
+==================================================*/
+
+.card,
+.menu-img img,
+.logo-container img,
+.social{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:1s;
+
+}
+
+.show{
+
+    opacity:1 !important;
+
+    transform:translateY(0) !important;
+
+}
+
+
+/*==================================================
+RESPONSIVE
+==================================================*/
+
+@media(max-width:950px){
+
+.nav-links{
+
+position:fixed;
+
+top:0;
+
+right:-100%;
+
+width:260px;
+
+height:100vh;
+
+background:#050505;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+gap:40px;
+
+transition:.4s;
+
+box-shadow:-5px 0 20px rgba(0,0,0,.5);
+
+}
+
+.nav-links.active{
+
+right:0;
+
+}
+
+.menu-btn{
+
+display:block;
+
+z-index:1001;
+
+}
+
+.logo-nav img{
+
+width:70px;
+
+}
+
+.hero{
+
+height:100vh;
+
+}
+
+.logo-container img{
+
+width:280px;
+
+}
+
+.titulo h2{
+
+font-size:34px;
+
+}
+
+.contacto-info h3{
+
+font-size:25px;
+
+}
+
+.social{
+
+width:100%;
+
+justify-content:center;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.navbar{
+
+padding:15px 20px;
+
+}
+
+.cards{
+
+grid-template-columns:1fr;
+
+}
+
+.card img{
+
+height:220px;
+
+}
+
+.menu-img img{
+
+border-radius:15px;
+
+}
+
+.whatsapp{
+
+width:58px;
+
+height:58px;
+
+font-size:30px;
+
+right:18px;
+
+bottom:18px;
+
+}
+
+}
+/*==================================================
+BOTÓN VOLVER ARRIBA
+==================================================*/
+
+.to-top{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:105px;
+
+    width:55px;
+
+    height:55px;
+
+    background:#19ff72;
+
+    color:black;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-decoration:none;
+
+    font-size:22px;
+
+    box-shadow:0 0 18px rgba(25,255,114,.45);
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.35s;
+
+    z-index:998;
+
+}
+
+.to-top.active{
+
+    opacity:1;
+
+    pointer-events:auto;
+
+}
+
+.to-top:hover{
+
+    transform:translateY(-5px);
+
+}
